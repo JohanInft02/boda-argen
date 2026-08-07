@@ -11,14 +11,42 @@ import content from '@/data/content.json'
 const rsvp = content.rsvp
 const form = rsvp.form
 
+const RSVP_SCRIPT_URL = process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL ?? ''
+
 export function Rsvp() {
   const [open, setOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    // Static site: no backend. Show a confirmation state locally.
-    setSubmitted(true)
+
+    const formData = new FormData(event.currentTarget)
+    const name = String(formData.get('name') ?? '')
+    const attendance = formData.get('attendance') === 'yes' ? form.attendanceYes : form.attendanceNo
+    const message = String(formData.get('message') ?? '')
+
+    setSubmitting(true)
+    setError(false)
+
+    try {
+      const response = await fetch(RSVP_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          nombre: name,
+          asistencia: attendance,
+          mensaje: message,
+        }),
+      })
+      const result = await response.json()
+      if (!result.success) throw new Error(result.message)
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -27,7 +55,7 @@ export function Rsvp() {
       image={cloudinaryUrl(rsvp.image, { width: 1600 })}
       strength={0.22}
       className="w-full py-28 sm:py-36"
-      overlayClassName="bg-primary/80"
+      overlayClassName="bg-primary/50"
     >
       <div className="mx-auto w-full max-w-xl px-6">
         <SectionHeading eyebrow={rsvp.eyebrow} title={rsvp.title} subtitle={rsvp.subtitle} light />
@@ -63,22 +91,6 @@ export function Rsvp() {
                 />
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label htmlFor="rsvp-guests" className="text-xs uppercase tracking-[0.2em] text-accent">
-                  {form.guests}
-                </label>
-                <input
-                  id="rsvp-guests"
-                  name="guests"
-                  type="number"
-                  min={1}
-                  max={10}
-                  defaultValue={1}
-                  required
-                  className="border border-primary-foreground/25 bg-transparent px-4 py-3 text-primary-foreground outline-none focus:border-accent"
-                />
-              </div>
-
               <fieldset className="flex flex-col gap-3">
                 <legend className="text-xs uppercase tracking-[0.2em] text-accent">
                   {form.attendance}
@@ -105,11 +117,18 @@ export function Rsvp() {
                 />
               </div>
 
+              {error ? (
+                <p className="text-sm text-red-300">
+                  No pudimos enviar tu confirmación. Por favor intenta de nuevo.
+                </p>
+              ) : null}
+
               <Button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                disabled={submitting}
+                className="w-full bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-60"
               >
-                {form.submit}
+                {submitting ? 'Enviando…' : form.submit}
               </Button>
             </form>
           ) : (

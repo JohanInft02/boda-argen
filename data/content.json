@@ -8,7 +8,7 @@
     "_ayuda": "En cualquier campo \"image\" puedes usar: una ruta local (/images/foto.png), una URL completa de Cloudinary, o solo el public ID (por ejemplo v1786061425/foto_abc123.png)."
   },
   "hero": {
-    "image": "v1786065324/foto-boda-kiss-restaurado_wbt9os.png",
+    "image": "v1786075881/boda-kiss-restaurada-2_gw18eq.jpg",
     "eyebrow": "Nos casamos",
     "names": "Argentina & José",
     "tagline": "41 años de amor, una sola promesa para siempre",
@@ -46,34 +46,34 @@
       },
       {
         "image": "v1786065324/foto-boda-kiss-restaurado_wbt9os.png",
-        "year": "2025",
+        "year": "1985",
         "caption": "Un beso para la eternidad"
       },
       {
         "image": "v1786058926/foto-boda-restaurada_psvtgu.jpg",
-        "year": "1994",
+        "year": "1985",
         "caption": "Sr & Sra Vasquez"
       },
       {
         "image": "v1786058926/argen-pregnant_ijwcl0.jpg",
-        "year": "2012",
+        "year": "1998",
         "caption": "Construyendo un hogar"
       },
       {
         "image": "v1786058927/la-gran-pareja-1_m5u4lv.jpg",
-        "year": "2020",
+        "year": "2009",
         "caption": "El amor siempre perdura"
       },
       {
-        "image": "v1786060262/mis-suegros-2019_jct2s0.jpg",
-        "year": "2020",
-        "caption": "Unidos por cada abrazo"
-      },
-      {
         "image": "v1786060261/mis-suegros-2016_jr812w.jpg",
-        "year": "2025",
+        "year": "2016",
         "caption": "Eligiéndonos cada día"
       },
+      {
+        "image": "v1786060262/mis-suegros-2019_jct2s0.jpg",
+        "year": "2019",
+        "caption": "Unidos por cada abrazo"
+      },  
       {
         "image": "v1786067600/cumple-argen_z7q10f.jpg",
         "year": "2025",
@@ -134,7 +134,6 @@
     "button": "Confirmar asistencia",
     "form": {
       "name": "Nombre completo",
-      "guests": "Número de invitados",
       "attendance": "¿Podrás acompañarnos?",
       "attendanceYes": "Sí, ahí estaré",
       "attendanceNo": "No podré asistir",
