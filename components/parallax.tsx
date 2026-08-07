@@ -1,6 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '@/lib/gsap'
 import { cn } from '@/lib/utils'
 
 type ParallaxProps = {
@@ -22,48 +24,38 @@ export function Parallax({
   id,
 }: ParallaxProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null)
-  const [offset, setOffset] = useState(0)
+  const bgRef = useRef<HTMLDivElement | null>(null)
 
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (media.matches) return
+  useGSAP(
+    () => {
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+      if (media.matches || !sectionRef.current || !bgRef.current) return
 
-    let frame = 0
-    const update = () => {
-      frame = 0
-      const node = sectionRef.current
-      if (!node) return
-      const rect = node.getBoundingClientRect()
-      const viewportH = window.innerHeight
-      // progress from -1 (below) to 1 (above) relative to viewport center
-      const progress = (rect.top + rect.height / 2 - viewportH / 2) / (viewportH + rect.height)
-      setOffset(-progress * rect.height * strength)
-    }
-
-    const onScroll = () => {
-      if (frame) return
-      frame = window.requestAnimationFrame(update)
-    }
-
-    update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-      if (frame) window.cancelAnimationFrame(frame)
-    }
-  }, [strength])
+      gsap.fromTo(
+        bgRef.current,
+        { yPercent: -strength * 50 },
+        {
+          yPercent: strength * 50,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.6,
+          },
+        },
+      )
+    },
+    { scope: sectionRef, dependencies: [strength] },
+  )
 
   return (
     <div id={id} ref={sectionRef} className={cn('relative overflow-hidden', className)}>
       <div
+        ref={bgRef}
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 -top-[20%] h-[140%] bg-cover bg-center will-change-transform"
-        style={{
-          backgroundImage: `url(${image})`,
-          transform: `translate3d(0, ${offset}px, 0)`,
-        }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div aria-hidden="true" className={cn('absolute inset-0', overlayClassName)} />
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">

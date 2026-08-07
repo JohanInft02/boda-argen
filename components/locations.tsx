@@ -60,10 +60,10 @@ export function Locations() {
   return (
     <section id="lugares" className="relative bg-background px-6 py-24 sm:py-32">
       <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-        <Reveal>
+        <Reveal direction="left">
           <LocationCard place={content.church} />
         </Reveal>
-        <Reveal delay={140}>
+        <Reveal direction="right" delay={140}>
           <LocationCard place={content.venue} />
         </Reveal>
       </div>

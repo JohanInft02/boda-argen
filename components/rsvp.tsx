@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useState, type SyntheticEvent } from 'react'
 import { Heart, Check } from 'lucide-react'
 import { Parallax } from '@/components/parallax'
 import { SectionHeading } from '@/components/section-heading'
@@ -19,7 +19,7 @@ export function Rsvp() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(false)
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)

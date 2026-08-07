@@ -40,46 +40,55 @@
     "subtitle": "Cada fotografía es un capítulo de la vida que hemos construido juntos.",
     "items": [
       {
+        "id": "boda-civil",
         "image": "v1786058927/foto-boda-comiendo_apvp2a.jpg",
         "year": "1985",
         "caption": "Nuestra boda civil"
       },
       {
+        "id": "beso-eternidad",
         "image": "v1786065324/foto-boda-kiss-restaurado_wbt9os.png",
         "year": "1985",
         "caption": "Un beso para la eternidad"
       },
       {
+        "id": "sr-sra-vasquez",
         "image": "v1786058926/foto-boda-restaurada_psvtgu.jpg",
         "year": "1985",
         "caption": "Sr & Sra Vasquez"
       },
       {
+        "id": "construyendo-hogar",
         "image": "v1786058926/argen-pregnant_ijwcl0.jpg",
         "year": "1998",
         "caption": "Construyendo un hogar"
       },
       {
+        "id": "amor-perdura",
         "image": "v1786058927/la-gran-pareja-1_m5u4lv.jpg",
         "year": "2009",
         "caption": "El amor siempre perdura"
       },
       {
+        "id": "eligiendonos-cada-dia",
         "image": "v1786060261/mis-suegros-2016_jr812w.jpg",
         "year": "2016",
         "caption": "Eligiéndonos cada día"
       },
       {
+        "id": "unidos-abrazo",
         "image": "v1786060262/mis-suegros-2019_jct2s0.jpg",
         "year": "2019",
         "caption": "Unidos por cada abrazo"
-      },  
+      },
       {
+        "id": "bailando-vida",
         "image": "v1786067600/cumple-argen_z7q10f.jpg",
         "year": "2025",
         "caption": "Bailando por la vida"
       },
       {
+        "id": "disfrutando-aniversario",
         "image": "v1786058927/la-gran-pareja-2_gdjsad.jpg",
         "year": "2025",
         "caption": "Disfrutando cada aniversario"

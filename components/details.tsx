@@ -8,9 +8,7 @@ export function Details() {
   return (
     <section className="relative bg-secondary/40 px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
-        <Reveal>
-          <SectionHeading eyebrow={details.eyebrow} title={details.title} />
-        </Reveal>
+        <SectionHeading eyebrow={details.eyebrow} title={details.title} />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
           {details.items.map((item, index) => (

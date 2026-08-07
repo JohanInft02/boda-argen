@@ -1,4 +1,4 @@
-# Boda de Argentina & José 💍
+# Boda de Argentina & José 💍| [![Netlify Status](https://api.netlify.com/api/v1/badges/86106ceb-294c-49d4-b8c1-8d65bf317249/deploy-status)](https://app.netlify.com/projects/la-gran-boda/deploys)
 
 Esta es la página web de invitación para la boda de **Argentina y José**, quienes después de **41 años de amor** decidieron celebrar su unión ante Dios y ante sus seres queridos.
 
@@ -14,7 +14,7 @@ Cuando alguien abre el link de la invitación, va recorriendo la página de arri
 4. **Galería de recuerdos**: una colección de fotos de la pareja a lo largo de los años (desde su boda civil en 1985 hasta la actualidad), cada una con su año y una pequeña descripción.
 5. **Ubicaciones**: los datos de la ceremonia religiosa (Iglesia Ágape, a las 2:00 p.m.) y de la recepción (Restaurante Sunly, a las 5:00 p.m.), cada una con un enlace directo a Google Maps para llegar sin problema.
 6. **Detalles importantes**: información práctica como el código de vestimenta (semi formal), el pedido de confirmar la asistencia dentro de los próximos 3 días, y que en lugar de regalos se sugiere una "lluvia de sobres".
-7. **Confirmación de asistencia (RSVP)**: un formulario sencillo donde el invitado escribe su nombre, cuántas personas asistirán, si podrá o no acompañarlos, y puede dejar un mensaje opcional para los novios.
+7. **Confirmación de asistencia (RSVP)**: un formulario sencillo donde el invitado escribe su nombre, indica si podrá o no acompañarlos, y puede dejar un mensaje opcional para los novios.
 8. **Pie de página**: un cierre con un agradecimiento final y la fecha de la boda.
 
 ## ¿Cómo se ve el diseño?
@@ -23,7 +23,7 @@ La página tiene un estilo elegante y romántico, con tipografía delicada, colo
 
 ## Sobre el formulario de confirmación
 
-Por ahora, el formulario de "Confirmar asistencia" es solamente visual: cuando alguien lo completa y lo envía, la página le muestra un mensaje de agradecimiento en pantalla, pero esa información **no se guarda todavía en ningún lado** (no hay una base de datos ni se envía un correo). Si en el futuro se quiere recibir de verdad esas confirmaciones, habría que conectar el formulario a algún sistema que las reciba y las guarde.
+El formulario de "Confirmar asistencia" ya está conectado y funcionando de verdad: cuando un invitado lo completa y lo envía, su nombre, si asistirá o no, y su mensaje quedan guardados automáticamente en una hoja de cálculo de Google Sheets. Así se puede llevar el control de quién confirmó su asistencia sin tener que revisarlo manualmente. Solo si Google confirma que el dato se guardó correctamente, la página le muestra al invitado el mensaje de agradecimiento; si algo falla, se le avisa para que lo intente de nuevo.
 
 ## ¿Cómo se cambia el contenido de la página?
 

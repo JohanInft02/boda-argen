@@ -176,23 +176,16 @@
     text-shadow: 0 1px 2px oklch(0.18 0.03 30 / 0.6), 0 3px 20px oklch(0.18 0.03 30 / 0.45);
   }
 
-  .reveal {
+  /* Estado inicial oculto para elementos animados por GSAP ScrollTrigger */
+  .gsap-reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .gsap-reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

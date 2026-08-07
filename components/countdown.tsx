@@ -1,6 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '@/lib/gsap'
 import { Parallax } from '@/components/parallax'
 import { SectionHeading } from '@/components/section-heading'
 import { cloudinaryUrl } from '@/lib/cloudinary'
@@ -24,12 +26,44 @@ function getTimeLeft(target: number): TimeLeft {
 export function Countdown() {
   const target = new Date(countdown.targetDate).getTime()
   const [time, setTime] = useState<TimeLeft | null>(null)
+  const gridRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     setTime(getTimeLeft(target))
     const id = window.setInterval(() => setTime(getTimeLeft(target)), 1000)
     return () => window.clearInterval(id)
   }, [target])
+
+  useGSAP(
+    () => {
+      const node = gridRef.current
+      if (!node) return
+
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+      if (media.matches) return
+
+      gsap.fromTo(
+        node.querySelectorAll('[data-countdown-unit]'),
+        { autoAlpha: 0, y: 26, scale: 0.85, rotateX: -25 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          rotateX: 0,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: 'back.out(1.6)',
+          scrollTrigger: {
+            trigger: node,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        },
+      )
+    },
+    { scope: gridRef },
+  )
 
   const units = [
     { label: countdown.labels.days, value: time?.days },
@@ -48,11 +82,12 @@ export function Countdown() {
       <div className="mx-auto w-full max-w-3xl px-6">
         <SectionHeading eyebrow={countdown.eyebrow} title={countdown.title} light />
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+        <div ref={gridRef} className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
           {units.map((unit) => (
             <div
               key={unit.label}
-              className="flex flex-col items-center border border-accent/40 bg-primary-foreground/5 px-4 py-6 backdrop-blur-sm"
+              data-countdown-unit
+              className="gsap-reveal flex flex-col items-center border border-accent/40 bg-primary-foreground/5 px-4 py-6 backdrop-blur-sm"
             >
               <span className="font-serif text-5xl font-medium tabular-nums text-primary-foreground sm:text-6xl">
                 {unit.value === undefined ? '—' : String(unit.value).padStart(2, '0')}
