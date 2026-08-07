@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Argentina & José · Nuestra Boda",
+    "description": "Con inmensa alegría los invitamos a celebrar nuestra boda, después de 41 años de amor."
+  },
+  "cloudinary": {
+    "cloudName": "yqdvrfke",
+    "_ayuda": "En cualquier campo \"image\" puedes usar: una ruta local (/images/foto.png), una URL completa de Cloudinary, o solo el public ID (por ejemplo v1786061425/foto_abc123.png)."
+  },
+  "hero": {
+    "image": "v1786065324/foto-boda-kiss-restaurado_wbt9os.png",
+    "eyebrow": "Nos casamos",
+    "names": "Argentina & José",
+    "tagline": "41 años de amor, una sola promesa para siempre",
+    "date": "Sábado, 5 de Septiembre de 2026",
+    "location": "Ciudad de Panamá",
+    "scrollHint": "Desliza para descubrir nuestra historia"
+  },
+  "invitation": {
+    "eyebrow": "Nuestra invitación",
+    "title": "Con el corazón lleno de gratitud",
+    "message": "Después de 41 años caminando juntos de la mano, casados por lo civil, hemos decidido unir nuestras vidas para siempre ante Dios y ante quienes más amamos. Será un honor contar con tu presencia en este día tan especial, en el que celebraremos el amor que ha resistido el tiempo. Tu compañía hará que este momento sea aún más inolvidable.",
+    "signature": "Con amor, Argentina & José"
+  },
+  "countdown": {
+    "image": "/images/parallax-rings.png",
+    "eyebrow": "Cuenta regresiva",
+    "title": "Faltan pocos días para el gran día",
+    "targetDate": "2026-09-05T14:00:00",
+    "labels": {
+      "days": "Días",
+      "hours": "Horas",
+      "minutes": "Minutos",
+      "seconds": "Segundos"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Nuestra historia",
+    "title": "41 años de recuerdos",
+    "subtitle": "Cada fotografía es un capítulo de la vida que hemos construido juntos.",
+    "items": [
+      {
+        "image": "v1786058927/foto-boda-comiendo_apvp2a.jpg",
+        "year": "1985",
+        "caption": "Nuestra boda civil"
+      },
+      {
+        "image": "v1786065324/foto-boda-kiss-restaurado_wbt9os.png",
+        "year": "2025",
+        "caption": "Un beso para la eternidad"
+      },
+      {
+        "image": "v1786058926/foto-boda-restaurada_psvtgu.jpg",
+        "year": "1994",
+        "caption": "Sr & Sra Vasquez"
+      },
+      {
+        "image": "v1786058926/argen-pregnant_ijwcl0.jpg",
+        "year": "2012",
+        "caption": "Construyendo un hogar"
+      },
+      {
+        "image": "v1786058927/la-gran-pareja-1_m5u4lv.jpg",
+        "year": "2020",
+        "caption": "El amor siempre perdura"
+      },
+      {
+        "image": "v1786060262/mis-suegros-2019_jct2s0.jpg",
+        "year": "2020",
+        "caption": "Unidos por cada abrazo"
+      },
+      {
+        "image": "v1786060261/mis-suegros-2016_jr812w.jpg",
+        "year": "2025",
+        "caption": "Eligiéndonos cada día"
+      },
+      {
+        "image": "v1786067600/cumple-argen_z7q10f.jpg",
+        "year": "2025",
+        "caption": "Bailando por la vida"
+      },
+      {
+        "image": "v1786058927/la-gran-pareja-2_gdjsad.jpg",
+        "year": "2025",
+        "caption": "Disfrutando cada aniversario"
+      }
+    ]
+  },
+  "church": {
+    "image": "v1786067018/agape_gurtdz.webp",
+    "eyebrow": "La ceremonia",
+    "title": "Ceremonia religiosa",
+    "name": "Iglesia Agape",
+    "address": "Iglesia Ágape Panamá, Panamá, Provincia de Panamá",
+    "time": "2:00 p.m.",
+    "note": "Te esperamos para acompañarnos en la bendición de nuestra unión.",
+    "mapUrl": "https://maps.app.goo.gl/F1e63JEJZzXrvGKa8",
+    "mapLabel": "Ver en el mapa"
+  },
+  "venue": {
+    "image": "v1786065700/sunly-restaurante_js5pi7.jpg",
+    "eyebrow": "La celebración",
+    "title": "Recepción",
+    "name": "Restaurante Sunly | El Dorado",
+    "address": "Centro Comercial Los Tucanes, Av. Miguel A. Brostella, Panamá, Provincia de Panamá",
+    "time": "5:00 p.m.",
+    "note": "Continuaremos la fiesta con cena, música y mucho baile.",
+    "mapUrl": "https://maps.app.goo.gl/NAhbvGWVC4o2u2z2A",
+    "mapLabel": "Ver en el mapa"
+  },
+  "details": {
+    "eyebrow": "Detalles",
+    "title": "Buenos por saber",
+    "items": [
+      {
+        "label": "Código de vestimenta",
+        "value": "Semi Formal "
+      },
+      {
+        "label": "Confirmación",
+        "value": "Agradecemos confirmar dentro de los próximos 3 días."
+      },
+      {
+        "label": "Mesa de regalos",
+        "value": "Lluvia de sobres"
+      }
+    ]
+  },
+  "rsvp": {
+    "image": "/images/parallax-venue.png",
+    "eyebrow": "Confirma tu asistencia",
+    "title": "Nos encantaría contar contigo",
+    "subtitle": "Por favor confirma tu asistencia para reservar tu lugar en esta celebración.",
+    "button": "Confirmar asistencia",
+    "form": {
+      "name": "Nombre completo",
+      "guests": "Número de invitados",
+      "attendance": "¿Podrás acompañarnos?",
+      "attendanceYes": "Sí, ahí estaré",
+      "attendanceNo": "No podré asistir",
+      "message": "Mensaje para los novios (opcional)",
+      "submit": "Enviar confirmación",
+      "successTitle": "¡Gracias por confirmar!",
+      "successMessage": "Hemos recibido tu confirmación. Te esperamos con mucho cariño."
+    }
+  },
+  "footer": {
+    "names": "Argentina & José",
+    "message": "Gracias por ser parte de nuestra historia.",
+    "date": "05 · 09 · 2026"
+  }
+}
